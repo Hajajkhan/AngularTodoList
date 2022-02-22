@@ -1,0 +1,29 @@
+<div id="forTable">
+  <table id="mainTable">
+    <thead>
+      <tr>
+        <td> Sr. </td>
+        <td> Title </td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id=random *ngFor="let item of array; index as i" trackBy="editTodos">
+        <td>
+          {{i+1}}
+        </td>
+        <td>
+          <input type="checkbox" [checked]="item.Completed" (change)="changingCheckStatus($event)" [value]="item.id">
+          {{item.Title}}
+        </td>
+        <td>
+          <button (click)="todoItemForEdit(item, i)" class="btn btn-primary">Edit</button>
+        </td>
+        <td>
+          <button (click)="todoItemDeletion(i)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

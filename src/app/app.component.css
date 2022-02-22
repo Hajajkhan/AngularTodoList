@@ -1,0 +1,24 @@
+#main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    display: flex;
+    justify-content: center;
+}
+#design>div{
+    color:red;
+}
+thead{
+    color: red;
+    font-weight: bold;
+}
+td{
+    border: black 2px solid;
+    padding: 5px;
+}
+#buttonStyle{
+    margin-top: 3px;
+}
+#btn1{
+    margin-right: 3px;
+}

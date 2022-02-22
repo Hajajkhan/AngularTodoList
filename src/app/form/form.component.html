@@ -1,0 +1,24 @@
+<div>
+  <nav class="navbar navbar-light bg-light">
+    <form class="container-fluid">
+      <div class="input-group">
+        <span class="input-group-text" id="basic-addon1">Todo-List</span>
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username" 
+        aria-describedby="basic-addon1" type="text" id="todo" name="value" required minlength="4" 
+        [(ngModel)]="todo" #value="ngModel" aria-label="Search" placeholder="Add Text">
+        <button (click)="todoAdd(value.value)" class="btn btn-outline-success" 
+        *ngIf="addButtonShow" type="submit">Add todo</button>
+        <button (click)="updateValueTodo(value.value)" class="btn btn-outline-success" 
+        *ngIf="updateButtonShow" type="submit">Update</button>
+      </div>
+    </form>
+  </nav>
+  <div id="design" *ngIf="value.invalid && (value.dirty || value.touched)" class="alert">
+    <div *ngIf="value.errors?.['required']">
+      Name is required.
+    </div>
+    <div *ngIf="value.errors?.['minlength']">
+      Name must be at least 4 characters long.
+    </div>
+  </div>
+</div>

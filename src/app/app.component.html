@@ -1,0 +1,25 @@
+<h1>Todo-List</h1>
+
+<div id="main">
+  <div id="mainPage">
+
+    <app-form
+      [todo]="todo"
+      [addButtonShow]="addButtonShow"
+      [updateButtonShow]="updateButtonShow"
+      (givemeTodos)="addTodo($event)"
+      (givemeTodoForUpdate)="updateTodoData($event)"
+      >
+    </app-form>
+
+
+    <app-table-data
+      [array]="Array"
+      (givemeItemforEdit)="editTodo($event)"
+      (givemeItemforDelete)="deleteItem($event)"
+      (checkStatus)="onChangeChecked($event)"
+      >
+    </app-table-data>
+
+  </div>
+</div>
